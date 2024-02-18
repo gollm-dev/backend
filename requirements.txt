@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pydantic
+dnspython
+pymongo
+motor
+python-dotenv
+transformers
+flask_cors
+

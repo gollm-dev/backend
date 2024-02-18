@@ -1,0 +1,16 @@
+payloads:
+  hello:
+    runtime: "vm"
+    params:
+      image_hash: "$GOLLM_IMAGE_HASH"
+nodes:
+  hello:
+    payload: "hello"
+    init:
+      - run:
+          args: ["/bin/sh", "-c", "python server.py > /dev/null &"]
+      - run:
+          args: ["/bin/sh", "-c", "sleep 1"]
+    http_proxy:
+      ports:
+        - "5000"
